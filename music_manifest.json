@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "game": "３年3組恒常性メモリアル",
+  "tracks": [
+    {
+      "file": "bgm_free/free_3_3_morning.mp3",
+      "title": "町の目覚め",
+      "author": "takai",
+      "site": "フリーBGM素材 音楽の卵",
+      "source_page": "https://ontama-m.com/ongaku_akarui.html",
+      "download_url": "https://ontama-m.com/midi/data/mp3_file/original/matinomezame.mp3",
+      "license_urls": [
+        "https://ontama-m.com/ongaku.html"
+      ],
+      "retrieved_date": "2026-10-27",
+      "sha256": "e5cb0b9bfd18b98c07ce04accbcbd3184f54314c4a1ee298c6cd28d1ec09cc35",
+      "bytes": 4050550,
+      "content_type": "audio/mpeg",
+      "usage_scene": "朝・登校・タイトル画面"
+    },
+    {
+      "file": "bgm_free/free_3_3_daily.mp3",
+      "title": "かるい足取りで",
+      "author": "takai",
+      "site": "フリーBGM素材 音楽の卵",
+      "source_page": "https://ontama-m.com/ongaku_akarui.html",
+      "download_url": "https://ontama-m.com/midi/data/mp3_file/original/04_karuiasidoride.mp3",
+      "license_urls": [
+        "https://ontama-m.com/ongaku.html"
+      ],
+      "retrieved_date": "2026-10-27",
+      "sha256": "9cc1a422b7ff6a41be2ec8424bf2f87526d98a1e8bc791dcc1a68a7d05b5032a",
+      "bytes": 2849272,
+      "content_type": "audio/mpeg",
+      "usage_scene": "日常会話・昼休み・放課後"
+    },
+    {
+      "file": "bgm_free/free_3_3_event.mp3",
+      "title": "わくわく",
+      "author": "takai",
+      "site": "フリーBGM素材 音楽の卵",
+      "source_page": "https://ontama-m.com/ongaku_akarui.html",
+      "download_url": "https://ontama-m.com/midi/data/mp3_file/original/wakuwaku.mp3",
+      "license_urls": [
+        "https://ontama-m.com/ongaku.html"
+      ],
+      "retrieved_date": "2026-10-27",
+      "sha256": "ce0396a2f361cdf213b7f6a654256fb3710e6b82979676e6119397030313f339",
+      "bytes": 3445554,
+      "content_type": "audio/mpeg",
+      "usage_scene": "行事・体育祭・文化祭・明るいイベント"
+    },
+    {
+      "file": "bgm_free/free_3_3_story.mp3",
+      "title": "Story",
+      "author": "takai",
+      "site": "フリーBGM素材 音楽の卵",
+      "source_page": "https://ontama-m.com/ongaku_akarui.html",
+      "download_url": "https://ontama-m.com/midi/data/mp3_file/original/story.mp3",
+      "license_urls": [
+        "https://ontama-m.com/ongaku.html"
+      ],
+      "retrieved_date": "2026-10-27",
+      "sha256": "4e72e58529afa1cc3f4d7972623746772cc1951502e889b891a02b44f0d013f6",
+      "bytes": 3301358,
+      "content_type": "audio/mpeg",
+      "usage_scene": "個別イベント・休日デート・物語の転機"
+    },
+    {
+      "file": "bgm_free/free_3_3_room.mp3",
+      "title": "ナチュラルルーム",
+      "author": "takai",
+      "site": "フリーBGM素材 音楽の卵",
+      "source_page": "https://ontama-m.com/ongaku_akarui.html",
+      "download_url": "https://ontama-m.com/midi/data/mp3_file/original/n_room.mp3",
+      "license_urls": [
+        "https://ontama-m.com/ongaku.html"
+      ],
+      "retrieved_date": "2026-10-27",
+      "sha256": "7b2b64b6eac3027d1745f419c6b2779ede07a3d9cbf2883258cd07cf4680674b",
+      "bytes": 2745263,
+      "content_type": "audio/mpeg",
+      "usage_scene": "穏やかな会話・保健室・図書室・休息"
+    },
+    {
+      "file": "bgm_free/free_3_3_evening.mp3",
+      "title": "黄昏時",
+      "author": "takai",
+      "site": "フリーBGM素材 音楽の卵",
+      "source_page": "https://ontama-m.com/ongaku_akarui.html",
+      "download_url": "https://ontama-m.com/midi/data/mp3_file/original/tasogaredoki.mp3",
+      "license_urls": [
+        "https://ontama-m.com/ongaku.html"
+      ],
+      "retrieved_date": "2026-10-27",
+      "sha256": "dfb4bfd9ee2c6ad921de9aae725bc80d7af413c4ebbcaa24b5aaf5f4e1332eba",
+      "bytes": 5411634,
+      "content_type": "audio/mpeg",
+      "usage_scene": "夕方・下校・振り返り・エンディング"
+    }
+  ],
+  "license_summary": "作者は著作権を保持。公式規約によりゲームBGM利用・商用利用無料、使用報告と表記は任意、音量・ループ・形式等の調整可。曲単体の再配布・販売、自作としての発表、Content ID登録は禁止。"
+}
