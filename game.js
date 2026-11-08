@@ -61,4 +61,21 @@ function click(e){let b=e.target.closest('button[data-act]');if(!b)return;let a=
 function deduceResult(c){document.getElementById('modal')?.remove();let el=document.createElement('div');el.className='modal';el.id='modal';el.innerHTML=`<div class="modal-card"><h2>図鑑に記録した</h2><p><strong>${esc(c.name)}：${esc(c.identity)}</strong></p><p>${esc(c.origin)}／${esc(c.target)}／${esc(c.timing)}</p><p>親しさ +5、理解 +2。固有イベントの続きを探してみよう。</p><button data-act="book">人物一覧に戻る</button><button data-act="close">閉じる</button></div>`;document.body.appendChild(el)}
 document.addEventListener('click',click);
 const oldSceneChoice=sceneChoice;sceneChoice=function(i){if(state.scene?.next==='graduation'){let c=C.find(x=>x.id===state.scene.endingId);state.scene=null;setscene({type:'ending',cid:c.id,title:'卒業式',narration:c.id==='c10_cancer'?'キャンサーは、きちんと診てもらうために学校を出た。季節が巡り、卒業式の日。彼は戻ってきた。':'季節は巡り、3月。卒業式の日、あの春からの思い出を胸に、二人は新しい一歩を迎える。',line:unique(c.graduation),bg:'graduation',face:'smile',next:'finish'});return}oldSceneChoice(i)};
+// Transition cut-ins, without interrupting input or repeated redraws.
+let lastCutInKey='';
+const renderWithoutCutIn=render;
+render=function(){
+  if(!state){lastCutInKey='';return renderWithoutCutIn()}
+  const kind=state.scene?.type;
+  const major=['special','sports','ending','date'].includes(kind);
+  const group=major?kind+':'+state.scene.title:(state.phase==='walk'?'walk':state.phase==='night'?'night':state.phase==='final'?'final':'afternoon');
+  const key=state.day+':'+group, changed=key!==lastCutInKey;
+  lastCutInKey=key;
+  renderWithoutCutIn();
+  if(changed&&state&&lastCutInKey===key){
+    const date=state.day<DAYS.length?DAYS[state.day]:'3月';
+    const caption=major?state.scene?.title:({walk:'下校',night:'夜',final:'文化祭の夜',afternoon:'放課後'}[group]||'放課後');
+    if(caption)app.innerHTML+=`<div class="scene-cutin" aria-hidden="true"><div class="scene-cutin__band"><span>${esc(date)}</span><strong>${esc(caption)}</strong></div></div>`;
+  }
+};
 setup();
