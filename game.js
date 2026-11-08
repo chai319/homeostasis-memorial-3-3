@@ -33,7 +33,7 @@ function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
 function load(){try{const x=JSON.parse(localStorage.getItem(KEY));return x?.v===1?x:null}catch(e){return null}}
 const bgmPlayer=new window.SmoothBgm([audio,document.getElementById('bgm-next')],Object.fromEntries(Object.entries(tracks).map(([k,v])=>[k,'assets/bgm/'+v])));
 function play(track){if(!state)return;music=track;bgmPlayer.request(track,state.volume,state.muted)}
-function portraitMask(id,face){const svg=window.PORTRAIT_MASKS?.[id+'_'+face];return svg?'mask-image:url(&quot;data:image/svg+xml,'+encodeURIComponent(svg).replaceAll("'",'%27')+'&quot;);-webkit-mask-image:url(&quot;data:image/svg+xml,'+encodeURIComponent(svg).replaceAll("'",'%27')+'&quot;);':''}
+function portraitMask(id,face){const raw=window.PORTRAIT_MASKS?.[id+'_'+face];const svg=raw?.replace('<path ', '<defs><filter id="edge" x="-2%" y="-2%" width="104%" height="104%"><feGaussianBlur stdDeviation="0.8"/></filter></defs><path filter="url(#edge)" ');return svg?'mask-image:url(&quot;data:image/svg+xml,'+encodeURIComponent(svg).replaceAll("'",'%27')+'&quot;);-webkit-mask-image:url(&quot;data:image/svg+xml,'+encodeURIComponent(svg).replaceAll("'",'%27')+'&quot;);':''}
 function sceneMusic(s){if(s.type==='ending'||s.type==='date')return 'story';if(s.type==='walk')return 'evening';if(s.type==='special'||s.type==='sports')return 'event';if(s.type==='reaction')return s.music||'daily';return 'daily'}
 
 function eligible(c){return state.pref==='両方'||state.pref===c.gender}
