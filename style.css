@@ -15,3 +15,13 @@
  .stage:has(.portrait) .panel { background:#101e35f2; color:#fff; border-color:#619bd5; }
  .stage:has(.portrait) .panel h2,.stage:has(.portrait) .panel .dialogue { color:#fff; }
 }
+
+/* Compact dialogue layout; longer text remains scrollable. */
+.stage:has(.portrait) .panel { padding:10px clamp(16px,2vw,28px); max-height:33vh; }
+.stage:has(.portrait) .panel h2 { font-size:clamp(1rem,1.4vw,1.3rem); margin:.08em 0 .28em; }
+.stage:has(.portrait) .panel p { margin:.12em 0 .32em; }
+.stage:has(.portrait) .panel .dialogue { font-size:clamp(.95rem,1.2vw,1.1rem); line-height:1.45; }
+.stage:has(.portrait) .panel .speaker { padding:3px 10px; margin:2px 0; }
+.stage:has(.portrait) .panel .grid { margin-top:6px; gap:7px; }
+.stage:has(.portrait) .panel .grid button { padding:7px 12px; min-height:42px; }
+@media(max-width:600px){ .stage:has(.portrait) .panel { max-height:46vh; padding:10px 14px; } }
