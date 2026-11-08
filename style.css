@@ -25,3 +25,5 @@
 .stage:has(.portrait) .panel .grid { margin-top:6px; gap:7px; }
 .stage:has(.portrait) .panel .grid button { padding:7px 12px; min-height:42px; }
 @media(max-width:600px){ .stage:has(.portrait) .panel { max-height:46vh; padding:10px 14px; } }
+
+.scene-cutin{position:fixed;inset:0;z-index:8;pointer-events:none;display:flex;align-items:center;overflow:hidden;animation:cutin-out 1.35s both}.scene-cutin__band{width:100%;padding:22px 8%;background:#112841ef;border-block:2px solid #76b8f3;box-shadow:0 10px 40px #001b3899;color:#fff;display:flex;gap:26px;align-items:center;animation:cutin-band 1.35s both}.scene-cutin__band span{font-weight:800;color:#ffd365;font-size:clamp(1.2rem,3vw,2rem)}.scene-cutin__band strong{font-size:clamp(1.2rem,3vw,2.4rem)}@keyframes cutin-band{0%{transform:translateX(-100%)}20%,70%{transform:translateX(0)}100%{transform:translateX(105%)}}@keyframes cutin-out{0%,75%{opacity:1}100%{opacity:0;visibility:hidden}}@media(prefers-reduced-motion:reduce){.scene-cutin{animation:none;display:none}}
