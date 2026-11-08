@@ -30,6 +30,7 @@ state.scene=null;state.phase='walk';render();
 if(!app.innerHTML.includes('scene-cutin'))throw Error('missing walk-home cut-in');
 state.phase='night';render();if(!app.innerHTML.includes('scene-cutin'))throw Error('missing night cut-in');
 state.day=2;state.phase='afternoon';render();if(!app.innerHTML.includes('scene-cutin'))throw Error('missing next-day cut-in');
+state.phase='end';state.scene=null;render();if(app.innerHTML.includes('scene-cutin'))throw Error('afternoon cut-in over the ending screen');
 const html=stage('roof','test',C[0],'blush');
 if(!html.includes('assets/chars-alpha/c01_naibun_blush.png')||html.includes('mask-image'))throw Error('old silhouette mask remains');
 console.log('PASS: date/location/time cut-ins; no repeated cut-in within a conversation; native alpha sprite rendering');

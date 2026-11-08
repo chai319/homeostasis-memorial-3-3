@@ -76,7 +76,7 @@ render=function(){
   renderDepth++;
   try{renderWithoutCutIn()}finally{renderDepth--}
   if(renderDepth)return;
-  if(!state){lastCutInKey='';return}
+  if(!state||state.phase==='end'&&!state.scene){lastCutInKey='';return}
   const info=transitionInfo();
   if(info.key===lastCutInKey)return;
   lastCutInKey=info.key;
