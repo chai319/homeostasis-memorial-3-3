@@ -33,7 +33,6 @@ function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
 function load(){try{const x=JSON.parse(localStorage.getItem(KEY));return x?.v===1?x:null}catch(e){return null}}
 const bgmPlayer=new window.SmoothBgm([audio,document.getElementById('bgm-next')],Object.fromEntries(Object.entries(tracks).map(([k,v])=>[k,'assets/bgm/'+v])));
 function play(track){if(!state)return;music=track;bgmPlayer.request(track,state.volume,state.muted)}
-function portraitMask(id,face){const raw=window.PORTRAIT_MASKS?.[id+'_'+face];const svg=raw?.replace('<path ', '<defs><filter id="edge" x="-2%" y="-2%" width="104%" height="104%"><feGaussianBlur stdDeviation="0.8"/></filter></defs><path filter="url(#edge)" ');return svg?'mask-image:url(&quot;data:image/svg+xml,'+encodeURIComponent(svg).replaceAll("'",'%27')+'&quot;);-webkit-mask-image:url(&quot;data:image/svg+xml,'+encodeURIComponent(svg).replaceAll("'",'%27')+'&quot;);':''}
 function sceneMusic(s){if(s.type==='ending'||s.type==='date')return 'story';if(s.type==='walk')return 'evening';if(s.type==='special'||s.type==='sports')return 'event';if(s.type==='reaction')return s.music||'daily';return 'daily'}
 
 function eligible(c){return state.pref==='両方'||state.pref===c.gender}
@@ -43,7 +42,7 @@ function unique(line){if(!line)return '';line=line.replaceAll('{name}',state.nam
 function setscene(s){state.scene=s;save();render()}
 function background(bg){return `background-image:url('assets/backgrounds/${esc(bg)}.png')`}
 function head(){let dt=state.day<DAYS.length?DAYS[state.day]:'3月';return `<header class="hud"><span class="brand">🌿 恒常性メモリアル <small>3年3組</small></span><span>${dt} · ${state.day<DAYS.length?state.day+1+'/'+DAYS.length+'日目':'卒業式'}</span><button data-act="status">ステータス</button><button data-act="book">人物・図鑑</button><button data-act="sound">${state.muted?'♪ 消音':'♪ 音楽'}</button><button data-act="help">遊び方</button></header>`}
-function stage(bg,inside,char,face='normal'){return `<div class="shell">${head()}<section class="stage" style="${background(bg)}">${char?`<img class="portrait" style="${portraitMask(char.id,face)}" src="assets/chars/${esc(char.id)}_${esc(face)}.png" alt="">`:''}<div class="panel">${inside}</div></section></div>`}
+function stage(bg,inside,char,face='normal'){return `<div class="shell">${head()}<section class="stage" style="${background(bg)}">${char?`<img class="portrait" src="assets/chars-alpha/${esc(char.id)}_${esc(face)}.png" decoding="async" alt="">`:''}<div class="panel">${inside}</div></section></div>`}
 function setup(){let saved=load();app.innerHTML=`<section class="setup"><div class="card"><div class="eyebrow">3年3組 · 恋愛 × 生物 × 物語</div><h1>恒常性<br>メモリアル</h1><p>放課後に出会い、知り、少しずつ距離を縮める。<br>あなたと15人の、最後の春。</p><form id="setup"><label for="name">あなたの名前</label><input id="name" maxlength="12" value="主人公" required><label for="gender">あなたの性別</label><select id="gender"><option>男</option><option>女</option><option>その他</option></select><label for="pref">恋愛の攻略対象</label><select id="pref"><option>両方</option><option>男</option><option>女</option></select><p class="hint">攻略対象以外の生徒とも、友達として交流できます。性別による攻略制限はありません。</p><button class="primary" type="submit">はじめから</button></form>${saved?'<div class="actions"><button data-act="resume">つづきから</button></div>':''}<p class="credits">自動セーブはこのブラウザ内に保存されます。音楽は開始後に再生します。</p></div></section>`;document.getElementById('setup').onsubmit=e=>{e.preventDefault();if(saved&&!confirm('保存済みの進行を消して、最初から始めますか？'))return;state=fresh(document.getElementById('name').value.trim()||'主人公',document.getElementById('gender').value,document.getElementById('pref').value);save();render()}}
 function special(){let date=DAYS[state.day],s=SPECIAL[date];if(s&&!state.special.includes(date)){state.special.push(date);if(date==='6/20'){setscene({type:'sports',title:'体育祭・綱引きの前',narration:'大地に飲み物を頼まれた。校庭では綱引きの準備が進んでいる。',bg:'field',options:[{text:'水を買っていく'},{text:'エナジードリンクを買っていく'},{text:'スポーツドリンクを買っていく'}]});return}setscene({type:'special',title:s[0],narration:s[1],line:s[3],bg:s[2],next:'afternoon'});return}state.phase='afternoon';save();render()}
 function scenehtml(s){let c=C.find(x=>x.id===s.cid);let content=`<div class="kicker">${esc(s.kicker||'物語')}</div><h2>${esc(s.title)}</h2><p class="dialogue">${esc(s.narration||'')}</p>${s.line?`${c?`<span class="speaker">${esc(c.name)}</span>`:''}<p class="dialogue">${esc(s.line)}</p>`:''}<div class="grid">${(s.options||[{text:'続ける',kind:'普通'}]).map((o,i)=>`<button data-act="sceneChoice" data-i="${i}">${esc(o.text)}</button>`).join('')}</div>`;play(sceneMusic(s));return stage(s.bg||c?.place||'class',content,c,s.face||'normal')}
@@ -61,21 +60,26 @@ function click(e){let b=e.target.closest('button[data-act]');if(!b)return;let a=
 function deduceResult(c){document.getElementById('modal')?.remove();let el=document.createElement('div');el.className='modal';el.id='modal';el.innerHTML=`<div class="modal-card"><h2>図鑑に記録した</h2><p><strong>${esc(c.name)}：${esc(c.identity)}</strong></p><p>${esc(c.origin)}／${esc(c.target)}／${esc(c.timing)}</p><p>親しさ +5、理解 +2。固有イベントの続きを探してみよう。</p><button data-act="book">人物一覧に戻る</button><button data-act="close">閉じる</button></div>`;document.body.appendChild(el)}
 document.addEventListener('click',click);
 const oldSceneChoice=sceneChoice;sceneChoice=function(i){if(state.scene?.next==='graduation'){let c=C.find(x=>x.id===state.scene.endingId);state.scene=null;setscene({type:'ending',cid:c.id,title:'卒業式',narration:c.id==='c10_cancer'?'キャンサーは、きちんと診てもらうために学校を出た。季節が巡り、卒業式の日。彼は戻ってきた。':'季節は巡り、3月。卒業式の日、あの春からの思い出を胸に、二人は新しい一歩を迎える。',line:unique(c.graduation),bg:'graduation',face:'smile',next:'finish'});return}oldSceneChoice(i)};
-// Transition cut-ins, without interrupting input or repeated redraws.
-let lastCutInKey='';
+// Cut-ins run once after the final render, including recursive opening events.
+let lastCutInKey='', renderDepth=0;
 const renderWithoutCutIn=render;
-render=function(){
-  if(!state){lastCutInKey='';return renderWithoutCutIn()}
-  const kind=state.scene?.type;
+function transitionInfo(){
+  const s=state.scene, kind=s?.type;
   const major=['special','sports','ending','date'].includes(kind);
-  const group=major?kind+':'+state.scene.title:(state.phase==='walk'?'walk':state.phase==='night'?'night':state.phase==='final'?'final':'afternoon');
-  const key=state.day+':'+group, changed=key!==lastCutInKey;
-  lastCutInKey=key;
-  renderWithoutCutIn();
-  if(changed&&state&&lastCutInKey===key){
-    const date=state.day<DAYS.length?DAYS[state.day]:'3月';
-    const caption=major?state.scene?.title:({walk:'下校',night:'夜',final:'文化祭の夜',afternoon:'放課後'}[group]||'放課後');
-    if(caption)app.innerHTML+=`<div class="scene-cutin" aria-hidden="true"><div class="scene-cutin__band"><span>${esc(date)}</span><strong>${esc(caption)}</strong></div></div>`;
-  }
+  const period=kind==='walk'||state.phase==='walk'?'walk':state.phase==='night'?'night':state.phase==='final'?'final':'afternoon';
+  const bg=s?.bg||(state.phase==='people'?LOC[state.location]?.[2]:period==='walk'?'gate-sunset':period==='night'?'myroom-night':period==='final'?'firefly':state.phase==='dateMenu'||state.phase==='datePlace'?'gate':'class');
+  const place=Object.values(LOC).find(v=>v[2]===bg)?.[0];
+  const caption=major?s.title:({walk:'下校',night:'夜',final:'文化祭の夜'}[period]||'放課後'+(place?' · '+place:''));
+  return {key:state.day+':'+period+':'+(major?kind+':'+s.title:bg),date:kind==='ending'&&s.title==='卒業式'?'3月':state.day<DAYS.length?DAYS[state.day]:'3月',caption};
+}
+render=function(){
+  renderDepth++;
+  try{renderWithoutCutIn()}finally{renderDepth--}
+  if(renderDepth)return;
+  if(!state){lastCutInKey='';return}
+  const info=transitionInfo();
+  if(info.key===lastCutInKey)return;
+  lastCutInKey=info.key;
+  if(info.caption)app.innerHTML+=`<div class="scene-cutin" aria-hidden="true"><div class="scene-cutin__band"><span>${esc(info.date)}</span><strong>${esc(info.caption)}</strong></div></div>`;
 };
 setup();

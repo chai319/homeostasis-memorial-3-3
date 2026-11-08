@@ -1,0 +1,1642 @@
+{
+  "version": "2026-11-08-alpha90",
+  "character_count": 15,
+  "expression_count": 6,
+  "asset_count": 90,
+  "tool": "built-in image_gen",
+  "image_processing": "Generated alpha preserved; no polygon masks, threshold cutouts, or raster retouching.",
+  "prompts": {
+    "normal": "Remove the white background only. Preserve exactly the same character, face, neutral expression, full-body pose, hair, costume, objects, proportions and framing. True transparent alpha background, clean anti-aliased edges, no cast shadow, no glow, no halo.",
+    "expression_template": "Use case: identity-preserve. Edit target: the referenced transparent visual-novel character sprite. Expression variant: {expression}. Preserve EXACT same character identity, pose, hair, uniform, props, proportions, scale and full-body framing. Only change the facial expression. Keep all clothing, skin, eyes, hair and objects opaque, with a true transparent alpha background and smooth antialiased silhouette edges. No backdrop, cast shadow, glow, border or halo.",
+    "koruchi": "Preserve the student-requested thin red ribbon headband with a small bow at her left temple.",
+    "expressions": {
+      "smile": "a warm happy smile",
+      "blush": "shy romantic embarrassment, visibly blushing cheeks and a bashful small smile",
+      "angry": "mild displeasure, knitted brows and a small pout; not rage",
+      "surprised": "surprised, widened eyes and a small open mouth",
+      "sad": "sadness, downturned mouth and sorrowful eyes"
+    }
+  },
+  "assets": [
+    {
+      "file": "c01_naibun_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "399dccc7380dbaf4ab7945de9500b92df494cda6257d7e79275d5e7ddfff6094",
+      "transparent_fraction": 0.745,
+      "opaque_fraction": 0.22678,
+      "soft_fraction": 0.02822,
+      "subject_bbox": [
+        223,
+        8,
+        806,
+        1503
+      ],
+      "reference": "assets/chars/c01_naibun_normal.png"
+    },
+    {
+      "file": "c01_naibun_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "ffbda613e40d3e588b2d1d2259a60b4ddc83f9736f54282cf4649c0c2a7ead29",
+      "transparent_fraction": 0.74997,
+      "opaque_fraction": 0.22698,
+      "soft_fraction": 0.02305,
+      "subject_bbox": [
+        222,
+        11,
+        806,
+        1504
+      ],
+      "reference": "assets/chars-alpha/c01_naibun_normal.png"
+    },
+    {
+      "file": "c01_naibun_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "317c8eb88176392a37e425ba6634ebdd7df28f6fe88dc0ebe7d23cf304d6a71b",
+      "transparent_fraction": 0.74812,
+      "opaque_fraction": 0.22763,
+      "soft_fraction": 0.02424,
+      "subject_bbox": [
+        223,
+        9,
+        806,
+        1504
+      ],
+      "reference": "assets/chars-alpha/c01_naibun_normal.png"
+    },
+    {
+      "file": "c01_naibun_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "24ea249705c984723c57dead65edc9d4268de385888f75cb8af1a76a9752665f",
+      "transparent_fraction": 0.7341,
+      "opaque_fraction": 0.22607,
+      "soft_fraction": 0.03983,
+      "subject_bbox": [
+        224,
+        9,
+        806,
+        1504
+      ],
+      "reference": "assets/chars-alpha/c01_naibun_normal.png"
+    },
+    {
+      "file": "c01_naibun_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "6f1c0508c1f6b4b3922d986ef529399a82f3c2c0d9ee91bfad2507cd09b82c28",
+      "transparent_fraction": 0.74884,
+      "opaque_fraction": 0.2279,
+      "soft_fraction": 0.02326,
+      "subject_bbox": [
+        223,
+        9,
+        806,
+        1504
+      ],
+      "reference": "assets/chars-alpha/c01_naibun_normal.png"
+    },
+    {
+      "file": "c01_naibun_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "4c840ee0bce991952224f6624f4bc25dd5b42e57e18a3545a4e2227bf5600294",
+      "transparent_fraction": 0.74576,
+      "opaque_fraction": 0.22983,
+      "soft_fraction": 0.02441,
+      "subject_bbox": [
+        220,
+        9,
+        807,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c01_naibun_normal.png"
+    },
+    {
+      "file": "c02_daichi_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "e8616990b1b5b2aed7de4f9b0688cdccb3cc6cb0a19b0f17aef99e6db33cc564",
+      "transparent_fraction": 0.70489,
+      "opaque_fraction": 0.27454,
+      "soft_fraction": 0.02057,
+      "subject_bbox": [
+        190,
+        4,
+        863,
+        1503
+      ],
+      "reference": "assets/chars/c02_daichi_normal.png"
+    },
+    {
+      "file": "c02_daichi_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "03aaf04e6cffd0f313c483b408a9078532a8ed1589a9d81a3f2066368b19426b",
+      "transparent_fraction": 0.70266,
+      "opaque_fraction": 0.2778,
+      "soft_fraction": 0.01954,
+      "subject_bbox": [
+        189,
+        3,
+        864,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c02_daichi_normal.png"
+    },
+    {
+      "file": "c02_daichi_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "fec6b1913798ac7e81c495ea8b063f5b4af90f73ad8f2ddd1f89d7a30543a5d9",
+      "transparent_fraction": 0.70357,
+      "opaque_fraction": 0.27895,
+      "soft_fraction": 0.01748,
+      "subject_bbox": [
+        190,
+        3,
+        863,
+        1506
+      ],
+      "reference": "assets/chars-alpha/c02_daichi_normal.png"
+    },
+    {
+      "file": "c02_daichi_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "e963c2de999800fec3cdbd1cc16bfda5173d70f6cecc08598096d16cc0654c0b",
+      "transparent_fraction": 0.70125,
+      "opaque_fraction": 0.2775,
+      "soft_fraction": 0.02126,
+      "subject_bbox": [
+        190,
+        2,
+        863,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c02_daichi_normal.png"
+    },
+    {
+      "file": "c02_daichi_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "c49684a48ee9d3343a4614d8640edb82cd6ed1f407809f1855948b3999e43dcf",
+      "transparent_fraction": 0.70029,
+      "opaque_fraction": 0.27743,
+      "soft_fraction": 0.02228,
+      "subject_bbox": [
+        191,
+        3,
+        862,
+        1504
+      ],
+      "reference": "assets/chars-alpha/c02_daichi_normal.png"
+    },
+    {
+      "file": "c02_daichi_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "7c9ff7ed1d9a61b12ee7c6887228b3fa38c0967fe70ef361be3dfaa48cb4f969",
+      "transparent_fraction": 0.70318,
+      "opaque_fraction": 0.27767,
+      "soft_fraction": 0.01915,
+      "subject_bbox": [
+        191,
+        3,
+        863,
+        1506
+      ],
+      "reference": "assets/chars-alpha/c02_daichi_normal.png"
+    },
+    {
+      "file": "c03_gaku_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "3f4fb6b1f45692652e87682ec28a18f39bceb43369c549b9e72575e97b9a9d91",
+      "transparent_fraction": 0.75298,
+      "opaque_fraction": 0.22481,
+      "soft_fraction": 0.02221,
+      "subject_bbox": [
+        283,
+        3,
+        857,
+        1518
+      ],
+      "reference": "assets/chars/c03_gaku_normal.png"
+    },
+    {
+      "file": "c03_gaku_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "8ec62c62a45026b73b0b958d09dc46ea5eac087918f33c1350209a1555136706",
+      "transparent_fraction": 0.75175,
+      "opaque_fraction": 0.22781,
+      "soft_fraction": 0.02044,
+      "subject_bbox": [
+        282,
+        1,
+        858,
+        1520
+      ],
+      "reference": "assets/chars-alpha/c03_gaku_normal.png"
+    },
+    {
+      "file": "c03_gaku_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "b6fc0cf57181eb854c609227974f393a100f818491db1a53420662f6907f92cc",
+      "transparent_fraction": 0.75253,
+      "opaque_fraction": 0.22728,
+      "soft_fraction": 0.02019,
+      "subject_bbox": [
+        282,
+        1,
+        856,
+        1519
+      ],
+      "reference": "assets/chars-alpha/c03_gaku_normal.png"
+    },
+    {
+      "file": "c03_gaku_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "38a292e375dc928e8cdaf438184c8210fdaabbb699be49f3964e471b4b6d758e",
+      "transparent_fraction": 0.75163,
+      "opaque_fraction": 0.22716,
+      "soft_fraction": 0.02121,
+      "subject_bbox": [
+        282,
+        2,
+        857,
+        1519
+      ],
+      "reference": "assets/chars-alpha/c03_gaku_normal.png"
+    },
+    {
+      "file": "c03_gaku_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "1544ae61b00d889eeb7cff158c7cdd89f3adf5f8205d94f8a6100ae8de4d0f7c",
+      "transparent_fraction": 0.74859,
+      "opaque_fraction": 0.22855,
+      "soft_fraction": 0.02287,
+      "subject_bbox": [
+        283,
+        2,
+        858,
+        1519
+      ],
+      "reference": "assets/chars-alpha/c03_gaku_normal.png"
+    },
+    {
+      "file": "c03_gaku_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "8901853634116d297265f762e489651c9ad0251625300dc9f66a3f070b7d0703",
+      "transparent_fraction": 0.75054,
+      "opaque_fraction": 0.22749,
+      "soft_fraction": 0.02197,
+      "subject_bbox": [
+        282,
+        3,
+        857,
+        1519
+      ],
+      "reference": "assets/chars-alpha/c03_gaku_normal.png"
+    },
+    {
+      "file": "c04_ando_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "c6f5ad19f789b36516dfa5d97063ffa786f36da9a9a52b82123c9a5d866bbd16",
+      "transparent_fraction": 0.73227,
+      "opaque_fraction": 0.23078,
+      "soft_fraction": 0.03695,
+      "subject_bbox": [
+        269,
+        8,
+        761,
+        1519
+      ],
+      "reference": "assets/chars/c04_ando_normal.png"
+    },
+    {
+      "file": "c04_ando_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "2f97240450dea5099e8ea01b0f79f2ce133065fb07f0484e87b3cadb19aa4f5f",
+      "transparent_fraction": 0.72952,
+      "opaque_fraction": 0.23477,
+      "soft_fraction": 0.03571,
+      "subject_bbox": [
+        267,
+        9,
+        756,
+        1520
+      ],
+      "reference": "assets/chars-alpha/c04_ando_normal.png"
+    },
+    {
+      "file": "c04_ando_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "0736bd90503a3c08129045fa898ac81e1ebc3c9b502924ff2a14c05112bbd216",
+      "transparent_fraction": 0.72859,
+      "opaque_fraction": 0.23416,
+      "soft_fraction": 0.03725,
+      "subject_bbox": [
+        265,
+        7,
+        756,
+        1520
+      ],
+      "reference": "assets/chars-alpha/c04_ando_normal.png"
+    },
+    {
+      "file": "c04_ando_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "ce04c12440ec04ce54abeb5f5d9558de6808f699bc74f676a687ba608709f365",
+      "transparent_fraction": 0.72723,
+      "opaque_fraction": 0.23452,
+      "soft_fraction": 0.03826,
+      "subject_bbox": [
+        267,
+        9,
+        755,
+        1520
+      ],
+      "reference": "assets/chars-alpha/c04_ando_normal.png"
+    },
+    {
+      "file": "c04_ando_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "5717292fdaeda9cabf924fdda22d06e7ff969576a670aa1456d068ddb103c3bc",
+      "transparent_fraction": 0.73112,
+      "opaque_fraction": 0.23258,
+      "soft_fraction": 0.03629,
+      "subject_bbox": [
+        271,
+        11,
+        755,
+        1520
+      ],
+      "reference": "assets/chars-alpha/c04_ando_normal.png"
+    },
+    {
+      "file": "c04_ando_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "e65b563fc69863c8f63ce94f9d39f36cd8ca1c4da5f8c727ccabdc5d7d9a7787",
+      "transparent_fraction": 0.7295,
+      "opaque_fraction": 0.23534,
+      "soft_fraction": 0.03516,
+      "subject_bbox": [
+        268,
+        10,
+        756,
+        1519
+      ],
+      "reference": "assets/chars-alpha/c04_ando_normal.png"
+    },
+    {
+      "file": "c05_kouchan_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "1d04dbafd3acfdac125bab0b22cd076a2719567e944b4ec0af7eff9a3bb5db1c",
+      "transparent_fraction": 0.73432,
+      "opaque_fraction": 0.23338,
+      "soft_fraction": 0.03229,
+      "subject_bbox": [
+        240,
+        8,
+        769,
+        1514
+      ],
+      "reference": "assets/chars/c05_kouchan_normal.png"
+    },
+    {
+      "file": "c05_kouchan_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "055422c812e59aa037de0053d0e88d3bade728a1e0e36e7ba6fbbcf9dc3eae02",
+      "transparent_fraction": 0.72648,
+      "opaque_fraction": 0.23513,
+      "soft_fraction": 0.03839,
+      "subject_bbox": [
+        237,
+        8,
+        770,
+        1515
+      ],
+      "reference": "assets/chars-alpha/c05_kouchan_normal.png"
+    },
+    {
+      "file": "c05_kouchan_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "2601bb33c91088984b40d0e052d02fae29ac98f2315f936a8c0da84726c3de60",
+      "transparent_fraction": 0.72738,
+      "opaque_fraction": 0.23531,
+      "soft_fraction": 0.03731,
+      "subject_bbox": [
+        236,
+        7,
+        770,
+        1513
+      ],
+      "reference": "assets/chars-alpha/c05_kouchan_normal.png"
+    },
+    {
+      "file": "c05_kouchan_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "7e81787d11a8ec54b934550c2771e1b7c61362981ac67ee67a212ef6c5254b0f",
+      "transparent_fraction": 0.72841,
+      "opaque_fraction": 0.23472,
+      "soft_fraction": 0.03688,
+      "subject_bbox": [
+        235,
+        7,
+        777,
+        1515
+      ],
+      "reference": "assets/chars-alpha/c05_kouchan_normal.png"
+    },
+    {
+      "file": "c05_kouchan_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "46137dca8ec444366504447b993cd685b07a19badae16e2f8386db3a673579fa",
+      "transparent_fraction": 0.7307,
+      "opaque_fraction": 0.23343,
+      "soft_fraction": 0.03587,
+      "subject_bbox": [
+        239,
+        9,
+        769,
+        1514
+      ],
+      "reference": "assets/chars-alpha/c05_kouchan_normal.png"
+    },
+    {
+      "file": "c05_kouchan_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "9245a6139b30bbc7130adaf98ba5fea41d2f901bd9c100d7e2416ee9eaf05bcf",
+      "transparent_fraction": 0.73104,
+      "opaque_fraction": 0.23485,
+      "soft_fraction": 0.03411,
+      "subject_bbox": [
+        245,
+        8,
+        768,
+        1515
+      ],
+      "reference": "assets/chars-alpha/c05_kouchan_normal.png"
+    },
+    {
+      "file": "c06_chihiro_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "f2418875743c6839d83ece4749d5486794c60cbcb0942a8abc4523b04909bc39",
+      "transparent_fraction": 0.75512,
+      "opaque_fraction": 0.21455,
+      "soft_fraction": 0.03033,
+      "subject_bbox": [
+        284,
+        12,
+        745,
+        1511
+      ],
+      "reference": "assets/chars/c06_chihiro_normal.png"
+    },
+    {
+      "file": "c06_chihiro_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "90c16cf82e9b707d7045e6469a72e44c91989fb17c1c62809b28fac7071dd272",
+      "transparent_fraction": 0.75084,
+      "opaque_fraction": 0.21606,
+      "soft_fraction": 0.0331,
+      "subject_bbox": [
+        283,
+        12,
+        748,
+        1511
+      ],
+      "reference": "assets/chars-alpha/c06_chihiro_normal.png"
+    },
+    {
+      "file": "c06_chihiro_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "aa39a5cd491f5d42adb354007e67fc24637998b64e15a4bcdc0faa14778711f0",
+      "transparent_fraction": 0.75002,
+      "opaque_fraction": 0.21899,
+      "soft_fraction": 0.03099,
+      "subject_bbox": [
+        281,
+        10,
+        751,
+        1512
+      ],
+      "reference": "assets/chars-alpha/c06_chihiro_normal.png"
+    },
+    {
+      "file": "c06_chihiro_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "20a1141c11b952421494b67e9a084b299a697c798e0b1a58df728441e2f7f861",
+      "transparent_fraction": 0.75375,
+      "opaque_fraction": 0.21585,
+      "soft_fraction": 0.03039,
+      "subject_bbox": [
+        284,
+        12,
+        742,
+        1512
+      ],
+      "reference": "assets/chars-alpha/c06_chihiro_normal.png"
+    },
+    {
+      "file": "c06_chihiro_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "70421b03bd59f6f059d3e36fe854050bd64eb9551f6689cb7cc6254254ec0120",
+      "transparent_fraction": 0.74877,
+      "opaque_fraction": 0.21788,
+      "soft_fraction": 0.03335,
+      "subject_bbox": [
+        282,
+        12,
+        750,
+        1511
+      ],
+      "reference": "assets/chars-alpha/c06_chihiro_normal.png"
+    },
+    {
+      "file": "c06_chihiro_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "5498d2f46971fdf48ba622c709471722a067272007b9166884c3120562c2f929",
+      "transparent_fraction": 0.75205,
+      "opaque_fraction": 0.21779,
+      "soft_fraction": 0.03016,
+      "subject_bbox": [
+        283,
+        11,
+        747,
+        1512
+      ],
+      "reference": "assets/chars-alpha/c06_chihiro_normal.png"
+    },
+    {
+      "file": "c07_rei_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "6ae5dcaf6b8da5fa6ce4dc4a2ab8f9475efbfc135350c75971f8818fcd42f541",
+      "transparent_fraction": 0.7736,
+      "opaque_fraction": 0.20477,
+      "soft_fraction": 0.02164,
+      "subject_bbox": [
+        229,
+        9,
+        702,
+        1509
+      ],
+      "reference": "assets/chars/c07_rei_normal.png"
+    },
+    {
+      "file": "c07_rei_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "a1dffe404fe45e53d1d8e9e4f5454f1710fdb5a43469838a064b6e06701ef627",
+      "transparent_fraction": 0.76984,
+      "opaque_fraction": 0.20588,
+      "soft_fraction": 0.02428,
+      "subject_bbox": [
+        229,
+        9,
+        704,
+        1510
+      ],
+      "reference": "assets/chars-alpha/c07_rei_normal.png"
+    },
+    {
+      "file": "c07_rei_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "d48e859a5593e86a8a2ebcc9dec37c807dac52e3e3e1de2ff80ee19f4a4c72a7",
+      "transparent_fraction": 0.76845,
+      "opaque_fraction": 0.20853,
+      "soft_fraction": 0.02302,
+      "subject_bbox": [
+        228,
+        10,
+        703,
+        1510
+      ],
+      "reference": "assets/chars-alpha/c07_rei_normal.png"
+    },
+    {
+      "file": "c07_rei_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "45edcffb6d401c2e1e8b24bd6ff8c3842e01d92d5a040e5dd22f90bc40ed68ac",
+      "transparent_fraction": 0.76899,
+      "opaque_fraction": 0.20664,
+      "soft_fraction": 0.02437,
+      "subject_bbox": [
+        228,
+        9,
+        703,
+        1510
+      ],
+      "reference": "assets/chars-alpha/c07_rei_normal.png"
+    },
+    {
+      "file": "c07_rei_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "cf063c1424f05f68ba68cc2e11b5c478e2207fab91a4266525adb14e94874932",
+      "transparent_fraction": 0.76777,
+      "opaque_fraction": 0.2088,
+      "soft_fraction": 0.02342,
+      "subject_bbox": [
+        228,
+        8,
+        704,
+        1510
+      ],
+      "reference": "assets/chars-alpha/c07_rei_normal.png"
+    },
+    {
+      "file": "c07_rei_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "b99508d957c2f987d9f2eea61d9e7425c46e21ccb17e42658fc25366b85a0cea",
+      "transparent_fraction": 0.76752,
+      "opaque_fraction": 0.20609,
+      "soft_fraction": 0.02639,
+      "subject_bbox": [
+        228,
+        9,
+        704,
+        1511
+      ],
+      "reference": "assets/chars-alpha/c07_rei_normal.png"
+    },
+    {
+      "file": "c08_subaru_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "e8585e39c31467ac7d10377fade4bc7d548e78c0bf0c03dfe263b094162391f7",
+      "transparent_fraction": 0.78196,
+      "opaque_fraction": 0.19784,
+      "soft_fraction": 0.0202,
+      "subject_bbox": [
+        280,
+        8,
+        731,
+        1500
+      ],
+      "reference": "assets/chars/c08_subaru_normal.png"
+    },
+    {
+      "file": "c08_subaru_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "7afe1aee1b38dd483cc455fb5b5e100a6b2c8c8af02a24995da2f7695ec6a078",
+      "transparent_fraction": 0.78196,
+      "opaque_fraction": 0.19984,
+      "soft_fraction": 0.01821,
+      "subject_bbox": [
+        279,
+        8,
+        732,
+        1501
+      ],
+      "reference": "assets/chars-alpha/c08_subaru_normal.png"
+    },
+    {
+      "file": "c08_subaru_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "4e4ec2c7b7b4bf04b7d8673ac9eb834e505ba67b519bcb9021c9477560ddcfe6",
+      "transparent_fraction": 0.7777,
+      "opaque_fraction": 0.20024,
+      "soft_fraction": 0.02206,
+      "subject_bbox": [
+        278,
+        7,
+        732,
+        1501
+      ],
+      "reference": "assets/chars-alpha/c08_subaru_normal.png"
+    },
+    {
+      "file": "c08_subaru_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "9655f1e09565b4fb4615284e76c89738f5f3ce291120c21648c7a0afb9be2448",
+      "transparent_fraction": 0.7817,
+      "opaque_fraction": 0.19911,
+      "soft_fraction": 0.01919,
+      "subject_bbox": [
+        280,
+        8,
+        731,
+        1501
+      ],
+      "reference": "assets/chars-alpha/c08_subaru_normal.png"
+    },
+    {
+      "file": "c08_subaru_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "9805d329d9e83b7eaf264db79a41240fe9a16a912ec2c8c1944084877b19f72d",
+      "transparent_fraction": 0.77962,
+      "opaque_fraction": 0.20046,
+      "soft_fraction": 0.01992,
+      "subject_bbox": [
+        280,
+        7,
+        733,
+        1502
+      ],
+      "reference": "assets/chars-alpha/c08_subaru_normal.png"
+    },
+    {
+      "file": "c08_subaru_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "cd67f63d4218a906fad4b2570971767f24f1f185cbe798a1589de6ec7a62dae9",
+      "transparent_fraction": 0.77821,
+      "opaque_fraction": 0.20019,
+      "soft_fraction": 0.0216,
+      "subject_bbox": [
+        279,
+        7,
+        733,
+        1500
+      ],
+      "reference": "assets/chars-alpha/c08_subaru_normal.png"
+    },
+    {
+      "file": "c09_sen_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "d97e5342b4f0d6ff0ed043212e252434ba78d1cc9bd87efe3424c18e0ebfed26",
+      "transparent_fraction": 0.74634,
+      "opaque_fraction": 0.23298,
+      "soft_fraction": 0.02068,
+      "subject_bbox": [
+        201,
+        7,
+        977,
+        1517
+      ],
+      "reference": "assets/chars/c09_sen_normal.png"
+    },
+    {
+      "file": "c09_sen_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "9a054fae003e018fd103b8e37ccb8f0694ca8938e1e34cd8c1467b4cf034a043",
+      "transparent_fraction": 0.74381,
+      "opaque_fraction": 0.23619,
+      "soft_fraction": 0.02,
+      "subject_bbox": [
+        200,
+        5,
+        978,
+        1518
+      ],
+      "reference": "assets/chars-alpha/c09_sen_normal.png"
+    },
+    {
+      "file": "c09_sen_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "543113eee1ce1db967fab71574621da389c575981c131cec40720ecc97485012",
+      "transparent_fraction": 0.74668,
+      "opaque_fraction": 0.23506,
+      "soft_fraction": 0.01826,
+      "subject_bbox": [
+        200,
+        7,
+        977,
+        1517
+      ],
+      "reference": "assets/chars-alpha/c09_sen_normal.png"
+    },
+    {
+      "file": "c09_sen_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "82f6438063c398f8c11bb06c196352c0158d04fdb47ea925b517e0d124f4d11d",
+      "transparent_fraction": 0.74802,
+      "opaque_fraction": 0.23471,
+      "soft_fraction": 0.01728,
+      "subject_bbox": [
+        199,
+        6,
+        977,
+        1517
+      ],
+      "reference": "assets/chars-alpha/c09_sen_normal.png"
+    },
+    {
+      "file": "c09_sen_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "04f504fd070627704e4a0ef8b4b63a6c0f28ddfc8e881c5648f42b2090feefd9",
+      "transparent_fraction": 0.74259,
+      "opaque_fraction": 0.23623,
+      "soft_fraction": 0.02119,
+      "subject_bbox": [
+        200,
+        5,
+        978,
+        1518
+      ],
+      "reference": "assets/chars-alpha/c09_sen_normal.png"
+    },
+    {
+      "file": "c09_sen_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "e9dd70aa2e3b3d949645e480d95b334b7d71894b35e052fa8bea47ba0ce10a12",
+      "transparent_fraction": 0.74368,
+      "opaque_fraction": 0.23647,
+      "soft_fraction": 0.01985,
+      "subject_bbox": [
+        200,
+        6,
+        978,
+        1519
+      ],
+      "reference": "assets/chars-alpha/c09_sen_normal.png"
+    },
+    {
+      "file": "c10_cancer_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "4ffa9b252073ded0d680ba67687ea4c8087b1be11c13f05c0e6901d9c7eb77f7",
+      "transparent_fraction": 0.71798,
+      "opaque_fraction": 0.26226,
+      "soft_fraction": 0.01976,
+      "subject_bbox": [
+        242,
+        9,
+        842,
+        1504
+      ],
+      "reference": "assets/chars/c10_cancer_normal.png"
+    },
+    {
+      "file": "c10_cancer_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "30301a93f080e364d5a1b8b39faa3ffb50dc3c25f33ea4cc94913eb7b5626ad7",
+      "transparent_fraction": 0.71659,
+      "opaque_fraction": 0.26324,
+      "soft_fraction": 0.02017,
+      "subject_bbox": [
+        242,
+        9,
+        842,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c10_cancer_normal.png"
+    },
+    {
+      "file": "c10_cancer_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "1458141a7d0b1c1da1cf8c448a325cf81c28e2b5b9cb518d2956823855d6d08e",
+      "transparent_fraction": 0.71541,
+      "opaque_fraction": 0.26476,
+      "soft_fraction": 0.01983,
+      "subject_bbox": [
+        242,
+        9,
+        843,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c10_cancer_normal.png"
+    },
+    {
+      "file": "c10_cancer_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "0c325dda9cfb75612c62bcb231e84d09851e338e44c5cbd7bf42e0d85620b0bd",
+      "transparent_fraction": 0.71438,
+      "opaque_fraction": 0.26413,
+      "soft_fraction": 0.02149,
+      "subject_bbox": [
+        241,
+        9,
+        843,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c10_cancer_normal.png"
+    },
+    {
+      "file": "c10_cancer_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "175ea1e0ca3fe6a0add329487ec7d7ea993689d438a708fba51f4a88fba7a268",
+      "transparent_fraction": 0.71548,
+      "opaque_fraction": 0.26295,
+      "soft_fraction": 0.02157,
+      "subject_bbox": [
+        242,
+        9,
+        842,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c10_cancer_normal.png"
+    },
+    {
+      "file": "c10_cancer_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "7ca8582043fa0dce4a723070bec783ba13c124d276fb126a17cb56b6ad4feb7f",
+      "transparent_fraction": 0.71559,
+      "opaque_fraction": 0.26513,
+      "soft_fraction": 0.01928,
+      "subject_bbox": [
+        242,
+        8,
+        842,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c10_cancer_normal.png"
+    },
+    {
+      "file": "c11_michiru_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "c8d7e1317804b39d89014eab2e98e4ef0b680db148ff4e85bc3e613361b9bba0",
+      "transparent_fraction": 0.69556,
+      "opaque_fraction": 0.28093,
+      "soft_fraction": 0.02351,
+      "subject_bbox": [
+        196,
+        5,
+        826,
+        1504
+      ],
+      "reference": "assets/chars/c11_michiru_normal.png"
+    },
+    {
+      "file": "c11_michiru_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "f00561d5174d8096a102ff6c4bcf45d921e6bd8a41fe50c171c8bf0ce3e10080",
+      "transparent_fraction": 0.68868,
+      "opaque_fraction": 0.28294,
+      "soft_fraction": 0.02838,
+      "subject_bbox": [
+        195,
+        4,
+        826,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c11_michiru_normal.png"
+    },
+    {
+      "file": "c11_michiru_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "b1c01041f922fed370323b3203c79a778031c7210bbd954b4fd50066b218600b",
+      "transparent_fraction": 0.68966,
+      "opaque_fraction": 0.28286,
+      "soft_fraction": 0.02748,
+      "subject_bbox": [
+        195,
+        4,
+        826,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c11_michiru_normal.png"
+    },
+    {
+      "file": "c11_michiru_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "4b53bf393d85f8d0dab5c8e823825f1110847e007b1f729fcaab5ca593c2e1d3",
+      "transparent_fraction": 0.69019,
+      "opaque_fraction": 0.28424,
+      "soft_fraction": 0.02557,
+      "subject_bbox": [
+        195,
+        4,
+        827,
+        1506
+      ],
+      "reference": "assets/chars-alpha/c11_michiru_normal.png"
+    },
+    {
+      "file": "c11_michiru_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "d71b1290a01fb1052da6a59f4c53641ef6016c2cb557b12db20ff4537ea3e273",
+      "transparent_fraction": 0.68893,
+      "opaque_fraction": 0.28265,
+      "soft_fraction": 0.02843,
+      "subject_bbox": [
+        195,
+        4,
+        825,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c11_michiru_normal.png"
+    },
+    {
+      "file": "c11_michiru_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "0f4db2c1bb1ae6c7522b24076a654b269412cb21f20fc522d4c2b91bd281e19f",
+      "transparent_fraction": 0.69426,
+      "opaque_fraction": 0.28027,
+      "soft_fraction": 0.02546,
+      "subject_bbox": [
+        196,
+        5,
+        826,
+        1506
+      ],
+      "reference": "assets/chars-alpha/c11_michiru_normal.png"
+    },
+    {
+      "file": "c12_leo_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "d318bf5b07359e442f9fca28ffc4d1ea5932e850096f16e9b573d245ada9001d",
+      "transparent_fraction": 0.70399,
+      "opaque_fraction": 0.27819,
+      "soft_fraction": 0.01783,
+      "subject_bbox": [
+        222,
+        8,
+        778,
+        1516
+      ],
+      "reference": "assets/chars/c12_leo_normal.png"
+    },
+    {
+      "file": "c12_leo_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "6b54db0c41c73eed0a047c83228607eb533e99c8a376c8fb49e8d182469fdc0b",
+      "transparent_fraction": 0.70071,
+      "opaque_fraction": 0.28105,
+      "soft_fraction": 0.01824,
+      "subject_bbox": [
+        219,
+        7,
+        779,
+        1516
+      ],
+      "reference": "assets/chars-alpha/c12_leo_normal.png"
+    },
+    {
+      "file": "c12_leo_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "d009581b20615fda5501fb9977fa6f7bb449ba35f0471f20ba7576e148bd8144",
+      "transparent_fraction": 0.70132,
+      "opaque_fraction": 0.28211,
+      "soft_fraction": 0.01657,
+      "subject_bbox": [
+        221,
+        6,
+        780,
+        1516
+      ],
+      "reference": "assets/chars-alpha/c12_leo_normal.png"
+    },
+    {
+      "file": "c12_leo_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "c3f4be8ba51deb8cac0cfce9b5704d83c1b70d8058d8cf8ba0f3fca462dc11fc",
+      "transparent_fraction": 0.69783,
+      "opaque_fraction": 0.28019,
+      "soft_fraction": 0.02198,
+      "subject_bbox": [
+        221,
+        6,
+        779,
+        1516
+      ],
+      "reference": "assets/chars-alpha/c12_leo_normal.png"
+    },
+    {
+      "file": "c12_leo_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "f5b46bca4d33d88375f328b602e60cf70cd0778d70480eae9fec3dd185a66962",
+      "transparent_fraction": 0.69928,
+      "opaque_fraction": 0.28054,
+      "soft_fraction": 0.02019,
+      "subject_bbox": [
+        220,
+        7,
+        777,
+        1516
+      ],
+      "reference": "assets/chars-alpha/c12_leo_normal.png"
+    },
+    {
+      "file": "c12_leo_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "6aef709ef50e4d4d61da1f7a9459cb731cc6a80c1b66f418e5879d838119231b",
+      "transparent_fraction": 0.70093,
+      "opaque_fraction": 0.2826,
+      "soft_fraction": 0.01646,
+      "subject_bbox": [
+        221,
+        7,
+        780,
+        1517
+      ],
+      "reference": "assets/chars-alpha/c12_leo_normal.png"
+    },
+    {
+      "file": "c13_kouchi_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "23567c8775cf212caed74071b1265f40b5940c061d66f2a084a56c4965764017",
+      "transparent_fraction": 0.78687,
+      "opaque_fraction": 0.19776,
+      "soft_fraction": 0.01537,
+      "subject_bbox": [
+        306,
+        11,
+        719,
+        1510
+      ],
+      "reference": "assets/chars/c13_kouchi_normal.png"
+    },
+    {
+      "file": "c13_kouchi_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "7a2bc5884e072c517913baa0dc8f1a5f8d93ab52ac9fc0d168f0c02aeda38869",
+      "transparent_fraction": 0.78382,
+      "opaque_fraction": 0.19973,
+      "soft_fraction": 0.01646,
+      "subject_bbox": [
+        305,
+        10,
+        719,
+        1511
+      ],
+      "reference": "assets/chars-alpha/c13_kouchi_normal.png"
+    },
+    {
+      "file": "c13_kouchi_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "1a2dc05112d23624a66630ad4483c8be36e5eab0762778149074d6502d78a584",
+      "transparent_fraction": 0.7845,
+      "opaque_fraction": 0.19973,
+      "soft_fraction": 0.01577,
+      "subject_bbox": [
+        305,
+        11,
+        719,
+        1511
+      ],
+      "reference": "assets/chars-alpha/c13_kouchi_normal.png"
+    },
+    {
+      "file": "c13_kouchi_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "080b99a86de460025c22fc0de852d2dcb64b929657cae2f3f470e214c2cb5bb2",
+      "transparent_fraction": 0.78532,
+      "opaque_fraction": 0.20001,
+      "soft_fraction": 0.01466,
+      "subject_bbox": [
+        305,
+        11,
+        720,
+        1510
+      ],
+      "reference": "assets/chars-alpha/c13_kouchi_normal.png"
+    },
+    {
+      "file": "c13_kouchi_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "72e8a0b46f1cfb01084027277e9afc34175c3392d46f8c2f6e2c6db2fb11cb09",
+      "transparent_fraction": 0.78557,
+      "opaque_fraction": 0.19997,
+      "soft_fraction": 0.01446,
+      "subject_bbox": [
+        305,
+        11,
+        719,
+        1510
+      ],
+      "reference": "assets/chars-alpha/c13_kouchi_normal.png"
+    },
+    {
+      "file": "c13_kouchi_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "f6d4913af90807dde863c3095b4b135c5ea99592e5e07c5ced41ce70eef61d66",
+      "transparent_fraction": 0.78318,
+      "opaque_fraction": 0.19916,
+      "soft_fraction": 0.01766,
+      "subject_bbox": [
+        306,
+        11,
+        720,
+        1511
+      ],
+      "reference": "assets/chars-alpha/c13_kouchi_normal.png"
+    },
+    {
+      "file": "c14_kasuiko_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "0106396ba0881c9dd614fbab07883a51d78a190db263e4da626d26a5e3f9dc47",
+      "transparent_fraction": 0.75398,
+      "opaque_fraction": 0.21367,
+      "soft_fraction": 0.03235,
+      "subject_bbox": [
+        226,
+        6,
+        785,
+        1512
+      ],
+      "reference": "assets/chars/c14_kasuiko_normal.png"
+    },
+    {
+      "file": "c14_kasuiko_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "9b2ab70e5623491d583285cfa29a209f9febf487600ae7136129d340a4aa603f",
+      "transparent_fraction": 0.74747,
+      "opaque_fraction": 0.21709,
+      "soft_fraction": 0.03544,
+      "subject_bbox": [
+        222,
+        6,
+        785,
+        1512
+      ],
+      "reference": "assets/chars-alpha/c14_kasuiko_normal.png"
+    },
+    {
+      "file": "c14_kasuiko_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "962264e09701b65675e0c838b598babec170da46521221d0316fb8899fb778be",
+      "transparent_fraction": 0.75009,
+      "opaque_fraction": 0.21475,
+      "soft_fraction": 0.03516,
+      "subject_bbox": [
+        222,
+        7,
+        786,
+        1512
+      ],
+      "reference": "assets/chars-alpha/c14_kasuiko_normal.png"
+    },
+    {
+      "file": "c14_kasuiko_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "ca48358cf0d2186cd69f22f1e3b0ac0cc75e6c01a3285ee43ade0f0df4dc04c6",
+      "transparent_fraction": 0.74734,
+      "opaque_fraction": 0.2149,
+      "soft_fraction": 0.03776,
+      "subject_bbox": [
+        222,
+        8,
+        789,
+        1512
+      ],
+      "reference": "assets/chars-alpha/c14_kasuiko_normal.png"
+    },
+    {
+      "file": "c14_kasuiko_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "1d781dedb3d320b36b7d15e7d4f23780bc5a4254097c4a4800b66ee55c03a2f1",
+      "transparent_fraction": 0.74755,
+      "opaque_fraction": 0.21682,
+      "soft_fraction": 0.03563,
+      "subject_bbox": [
+        221,
+        6,
+        785,
+        1512
+      ],
+      "reference": "assets/chars-alpha/c14_kasuiko_normal.png"
+    },
+    {
+      "file": "c14_kasuiko_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "71cf6070046484053d0586ffe6150c329598481ec5f098351061ace839663c80",
+      "transparent_fraction": 0.74733,
+      "opaque_fraction": 0.21534,
+      "soft_fraction": 0.03733,
+      "subject_bbox": [
+        221,
+        8,
+        786,
+        1512
+      ],
+      "reference": "assets/chars-alpha/c14_kasuiko_normal.png"
+    },
+    {
+      "file": "c15_koruchi_normal.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "aae352173d7deb28ab22f0ff835ce06263217cf25ea39f9ed0c74987f4e783cb",
+      "transparent_fraction": 0.75729,
+      "opaque_fraction": 0.2111,
+      "soft_fraction": 0.03161,
+      "subject_bbox": [
+        296,
+        6,
+        730,
+        1504
+      ],
+      "reference": "assets/chars/c15_koruchi_normal.png"
+    },
+    {
+      "file": "c15_koruchi_smile.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "fbc61bf0f98754b37c686c8009342f6b2e3f8c0a61d759754793b78b4c1b3226",
+      "transparent_fraction": 0.75499,
+      "opaque_fraction": 0.21813,
+      "soft_fraction": 0.02688,
+      "subject_bbox": [
+        296,
+        5,
+        729,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c15_koruchi_normal.png"
+    },
+    {
+      "file": "c15_koruchi_blush.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "76b130fa02123431e59df93d1a1ff831c2bae3799a38ef53cb61f0a1434a1b7e",
+      "transparent_fraction": 0.75276,
+      "opaque_fraction": 0.21835,
+      "soft_fraction": 0.0289,
+      "subject_bbox": [
+        295,
+        5,
+        731,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c15_koruchi_normal.png"
+    },
+    {
+      "file": "c15_koruchi_angry.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "272e542d2cca176e4c6aa15dcc17dc1b13aac0f0330341e87ef58fb188092b8b",
+      "transparent_fraction": 0.75706,
+      "opaque_fraction": 0.2199,
+      "soft_fraction": 0.02304,
+      "subject_bbox": [
+        297,
+        6,
+        730,
+        1506
+      ],
+      "reference": "assets/chars-alpha/c15_koruchi_normal.png"
+    },
+    {
+      "file": "c15_koruchi_surprised.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "75a4ea920ecd3d13963f41d4eba580b4de889a8c83e6da4ea664702b71869c68",
+      "transparent_fraction": 0.75471,
+      "opaque_fraction": 0.21789,
+      "soft_fraction": 0.0274,
+      "subject_bbox": [
+        295,
+        5,
+        732,
+        1503
+      ],
+      "reference": "assets/chars-alpha/c15_koruchi_normal.png"
+    },
+    {
+      "file": "c15_koruchi_sad.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "c3258ba110c38624f9bffb08fda1fad950816858a76addf8d683b0f2fb655410",
+      "transparent_fraction": 0.75283,
+      "opaque_fraction": 0.21712,
+      "soft_fraction": 0.03004,
+      "subject_bbox": [
+        291,
+        6,
+        734,
+        1505
+      ],
+      "reference": "assets/chars-alpha/c15_koruchi_normal.png"
+    }
+  ]
+}
